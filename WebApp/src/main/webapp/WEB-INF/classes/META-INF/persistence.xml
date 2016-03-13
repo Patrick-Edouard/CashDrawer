@@ -1,0 +1,55 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+            http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="CashDrawer" transaction-type="JTA">
+    
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <jta-data-source>java:jboss/datasources/MySqlDS</jta-data-source>
+        <!-- jta-data-source>MySQLConnection</jta-data-source -->
+        
+        <!--exclude-unlisted-classes>false</exclude-unlisted-classes-->
+        <class>ch.qiminfo.demo.database.entities.Coin</class>
+        <class>ch.qiminfo.demo.database.entities.CoinType</class>
+        
+        
+      	
+      	<properties>
+
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="a29922992"/>
+
+            <!--Hibernate properties-->
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.format_sql" value="false"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+
+        </properties>
+
+
+
+<!--Working H2
+<properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+            <property name="hibernate.max_fetch_depth" value="3" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <property name="hibernate.show_sql" value="true" />
+        </properties>
+-->
+        
+<!--  
+		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.transaction.flush_before_completion"
+				value="true" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+		</properties>
+		-->
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>CashDrawer</artifactId>
+        <groupId>ch.qiminfo.demo</groupId>
+        <version>1.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>WebApp</artifactId>
+    
+    <packaging>war</packaging>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<spring.version>3.2.11.RELEASE</spring.version>
+		<spring.security.version>3.2.5.RELEASE</spring.security.version>
+		<jstl.version>1.2</jstl.version>
+		<hibernate.version>4.1.7.Final</hibernate.version>
+	</properties>
+	<build>
+		<finalName>CashDrawer</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>ch.qiminfo.demo</groupId>
+			<artifactId>Business</artifactId>
+			<version>1.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qiminfo.demo</groupId>
+			<artifactId>DataBase</artifactId>
+			<version>1.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.191</version>
+		</dependency>
+	</dependencies>
+	
+
+</project>
